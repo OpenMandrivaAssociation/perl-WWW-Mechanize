@@ -1,6 +1,6 @@
 %define module	WWW-Mechanize
 %define name	perl-%{module}
-%define version 1.22
+%define version 1.30
 %define release %mkrel 1
 
 Name:		    %{name}
