@@ -25,6 +25,7 @@ Buildrequires:	perl(Test::Pod)
 Buildrequires:	perl(Test::Warn)
 Buildrequires:	perl(Test::LongString)
 Buildarch:	    noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 WWW::Mechanize, or Mech for short, helps you automate interaction with a
