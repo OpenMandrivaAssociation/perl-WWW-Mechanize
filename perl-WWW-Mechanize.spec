@@ -1,7 +1,7 @@
 %define module	WWW-Mechanize
 %define name	perl-%{module}
-%define version 1.34
-%define release %mkrel 4
+%define version 1.50
+%define release %mkrel 1
 
 Name:		    %{name}
 Version:	    %{version}
@@ -24,6 +24,7 @@ Buildrequires:	perl(Test::Memory::Cycle)
 Buildrequires:	perl(Test::Pod)
 Buildrequires:	perl(Test::Warn)
 Buildrequires:	perl(Test::LongString)
+Buildrequires:	perl(HTTP::Response::Encoding)
 Buildarch:	    noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
