@@ -11,9 +11,6 @@ License:	    GPL or Artistic
 Group:		    Development/Perl
 Url:            http://search.cpan.org/dist/%{module}
 Source:         http://www.cpan.org/modules/by-module/WWW/%{module}-%{version}.tar.bz2
-%if %{mdkversion} < 1010
-Buildrequires:	perl-devel
-%endif
 BuildRequires:	perl(CGI)
 BuildRequires:	perl(HTML::Parser)
 BuildRequires:	perl(IO::Socket::SSL)
@@ -25,6 +22,7 @@ Buildrequires:	perl(Test::Pod)
 Buildrequires:	perl(Test::Warn)
 Buildrequires:	perl(Test::LongString)
 Buildrequires:	perl(HTTP::Response::Encoding)
+Buildrequires:	perl(HTTP::Server::Simple::CGI)
 Buildarch:	    noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
