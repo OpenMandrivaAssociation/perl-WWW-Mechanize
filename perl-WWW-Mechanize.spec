@@ -1,16 +1,16 @@
-%define module	WWW-Mechanize
-%define name	perl-%{module}
-%define version 1.54
-%define release %mkrel 1
+%define upstream_name	 WWW-Mechanize
+%define upstream_version 1.56
 
-Name:		    %{name}
-Version:	    %{version}
-Release:	    %{release}
+Name:		    perl-%{upstream_name}
+Version:	    %perl_convert_version %{upstream_version}
+Release:	    %mkrel 1
+
 Summary:	    Handy web browsing in a Perl object
-License:	    GPL or Artistic
+License:	    GPL+ or Artistic
 Group:		    Development/Perl
-Url:            http://search.cpan.org/dist/%{module}
-Source:         http://www.cpan.org/modules/by-module/WWW/%{module}-%{version}.tar.bz2
+Url:            http://search.cpan.org/dist/%{upstream_name}
+Source0:        http://www.cpan.org/modules/by-module/WWW/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires:	perl(CGI)
 BuildRequires:	perl(HTML::Parser)
 BuildRequires:	perl(IO::Socket::SSL)
@@ -23,8 +23,8 @@ Buildrequires:	perl(Test::Warn)
 Buildrequires:	perl(Test::LongString)
 Buildrequires:	perl(HTTP::Response::Encoding)
 Buildrequires:	perl(HTTP::Server::Simple::CGI)
-Buildarch:	    noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+Buildarch: noarch
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 WWW::Mechanize, or Mech for short, helps you automate interaction with a
@@ -35,7 +35,7 @@ the next page can be fetched. Mech also stores a history of the URLs you've
 visited, which can be queried and revisited.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor <<EOF
