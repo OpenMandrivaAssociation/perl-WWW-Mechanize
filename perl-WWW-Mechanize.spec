@@ -23,6 +23,7 @@ Buildrequires:	perl(Test::Warn)
 Buildrequires:	perl(Test::LongString)
 Buildrequires:	perl(HTTP::Response::Encoding)
 Buildrequires:	perl(HTTP::Server::Simple::CGI)
+Buildrequires:	perl-Test-Memory-Cycle
 Buildarch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
