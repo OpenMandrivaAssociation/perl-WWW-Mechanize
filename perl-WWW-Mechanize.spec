@@ -1,14 +1,14 @@
 %define modname	WWW-Mechanize
-%define modver 1.73
+%define modver 1.74
 
 Summary:	Handy web browsing in a Perl object
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	5
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
-Source0:	http://www.cpan.org/modules/by-module/WWW/WWW-Mechanize-%{modver}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/WWW/%{modname}-%{modver}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl-devel
 BuildRequires:	perl(CGI)
@@ -38,7 +38,7 @@ visited, which can be queried and revisited.
 %setup -qn %{modname}-%{modver}
 
 %build
-%__perl Makefile.PL INSTALLDIRS=vendor <<EOF
+perl Makefile.PL INSTALLDIRS=vendor <<EOF
 EOF
 %make
 
@@ -54,5 +54,3 @@ make test
 %{perl_vendorlib}/WWW
 %{_mandir}/man1/*
 %{_mandir}/man3/*
-
-
