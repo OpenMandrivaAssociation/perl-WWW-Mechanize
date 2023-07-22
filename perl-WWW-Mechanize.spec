@@ -1,5 +1,5 @@
 %define modname	WWW-Mechanize
-%define modver 1.88
+%define modver 2.17
 
 Summary:	Handy web browsing in a Perl object
 Name:		perl-%{modname}
