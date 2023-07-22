@@ -1,14 +1,13 @@
 %define modname	WWW-Mechanize
-%define modver 2.17
 
 Summary:	Handy web browsing in a Perl object
 Name:		perl-%{modname}
-Version:	%perl_convert_version %{modver}
+Version:	2.17
 Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
-Source0:	http://www.cpan.org/modules/by-module/WWW/WWW-Mechanize-%{modver}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/WWW/WWW-Mechanize-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl-devel
 BuildRequires:	perl(CGI)
@@ -37,19 +36,20 @@ the next page can be fetched. Mech also stores a history of the URLs you've
 visited, which can be queried and revisited.
 
 %prep
-%setup -qn %{modname}-%{modver}
+%autosetup -p1 -n %{modname}-%{version}
+perl Makefile.PL INSTALLDIRS=vendor <<EOF
+EOF
 
 %build
-%__perl Makefile.PL INSTALLDIRS=vendor <<EOF
-EOF
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
-%check
 # Some tests will fail because of firewalls and friends
-make test || :
+# Also we don't currently have all dependencies used there
+#check
+#%make_build test
 
 %files 
 %doc Changes etc/www-mechanize-logo.png
