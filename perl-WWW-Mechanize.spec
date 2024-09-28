@@ -2,7 +2,7 @@
 
 Summary:	Handy web browsing in a Perl object
 Name:		perl-%{modname}
-Version:	2.18
+Version:	2.19
 Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
